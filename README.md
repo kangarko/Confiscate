@@ -1,2 +1,4 @@
+![Confiscate Logo](https://i.imgur.com/kTTmJ44.png)
+
 # Confiscate
 Discover duplication glitches, abusive staff giving items, x-ray or simply poor server economy.
