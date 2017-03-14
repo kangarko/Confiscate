@@ -1,5 +1,4 @@
-![Logo](https://i.imgur.com/qrosY8Y.png)
-
+# Confiscate
 Confiscate is a premium grade Bukkit bukkit that offers confiscating illegal items away from players. It has been designed as an innovative approach to lower the frustration of server owners from
 
 * abusive staff misusing commands like /give or simply creative mode.
