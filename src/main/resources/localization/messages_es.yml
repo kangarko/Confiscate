@@ -1,0 +1,221 @@
+# !-----------------------------------------------------------------------------------------!
+#
+#                             Bienvenido al archivo de localización
+#
+# ------------------------------------------------------------------------------------------- 
+#
+#  Este archivo contiene la mayoría de los mensajes y notificaciones que recibe el jugador
+#  mientras interactúa con este plugin. Simplemente edítalos como quieras y aplica los cambios
+#  reiniciando el servidor o volviendo a cargar el plugin.
+#
+#  Para no mostrar un mensaje, configúrelo en 'none'
+# 
+#  Las variables de los mensajes está entre corchetes {} y los códigos de color con el caracter &
+# !-----------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------
+# Mensajes relacionados con el registro.
+# -------------------------------------------------------------------------------------------
+Log:
+  Ignore_In_Room:
+    Type: IGNORED OPENING OF CHESTS IN CHEST ROOM
+    Console_Msg: '&e{0} abriendo {1} en la sala de cofre, ignorando..'
+    Log_Msg: '&eAbriendo {1} en la sala de cofre, ignorando..'
+  Ignore_Metadata:
+    Type: IGNORED ITEMS DUE TO METADATA
+    Console_Msg: '&eIgnorando {0} {1} con {2} metadatos'
+    Log_Msg: '&eIgnorar {1} con {2} metadatos'
+  Crashable:
+    Type: CRASHABLE ITEMS
+    Console_Msg: '&c[PELIGRO] {0} tenía un objeto que puede crashear {1} (id {2}), removiendo..'
+    Log_Msg: '&c[PELIGRO] Objeto crasheable {1} id {2}'
+  Illegal:
+    Type: BANNED ITEMS
+    Console_Msg: '&cConfiscando el objeto prohibido {0} de {1}'
+    Log_Msg: '&cTomando objeto prohibido {1}'
+  Stack_Illegal:
+    Type: OVERSTACKED ITEMS
+    Console_Msg: '&cConfiscando el objeto {0} anormalmente stackeado de {1} {2}x'
+    Log_Msg: '&cAnormalmente {2}x stackeado {1}'
+  Hacked_Potion:
+    Type: HACKED POTIONS
+    Console_Msg: '&cConfiscando la poción hackeada {0} de {1}'
+    Log_Msg: '&cPoción hackeada {1}'
+  Infinite_Potion:
+    Type: INFINITE POTIONS
+    Console_Msg: '&cTomando la poción infinita {0} de {1}'
+    Log_Msg: '&cPoción infinita {1}'
+  Enchant_Unnatural:
+    Type: UNAPPLICABLE ENCHANTS
+    Console_Msg: '&cConfiscando el objeto de {0} con encantamientos anormales {1} {2} en {3}'
+    Log_Msg: '&cEncantamiento {1} anormal nivel {2} en {3}'
+  Enchant_Too_High:
+    Type: TOO HIGH ENCHANTS
+    Console_Msg: '&cTomar {0} '' es demasiado alto para encantar {1} {2} en {3}'
+    Log_Msg: '&cDemasiado alto {1} encantar lvl {2} en {3}'
+  Worldedit:
+    Type: WORLDEDIT
+    Console_Msg: '&cLimitando WorldEdit para {0}, omitido {1}x de {2}s por encima del límite máximo
+      {3}x cerca {4}'
+    Log_Msg: '&cOmitiendo {1}x de {2}s por encima del límite máximo {3}x cerca de {4}'
+  Above_Limit:
+    Type: ITEMS ABOVE LIMIT
+    Console_Msg: '&cConfiscando {0}x de {1} {2} por encima del límite {3}x'
+    Log_Msg: '&c{0}x {2} por encima del límite {3}x'
+  Transaction:
+    Type: SHOP TRANSACTIONS
+    # El {1} es generalmente reemplazado por verbos desde abajo
+    Console_Msg: '&7[{0}] {2} {1} {5} por {4}$ de {3}'
+    Log_Msg: '&7[{0}] {1} {5} por {4}$ de {3}'
+
+# -------------------------------------------------------------------------------------------
+# Messages relating to the chest room
+# -------------------------------------------------------------------------------------------
+Room:
+  No_Permission:
+    Chest: "&cNo tienes permiso suficiente para ver el contenido del cofre."
+    Logs: "&cNo tienes permiso suficiente para ver el registro de los jugadores."
+    Cornerstone: "&cNo tienes permiso suficiente para establecer la sala de cofres."
+    Destroy: "&cLa sala de cofres está protegida."
+    
+  Chest_Menu_Title: "&0Visualizando cofre confiscado"
+  Browsing: "&2Mirando el contenido del cofre. Puede copiar objetos a su inventario, pero se perderán todos los cambios al cerrar el cofre."
+  Cornerstone_Set: "&7Estableciste la &2sala de cofres&7."
+
+  # WARNING: Changing this AFTER your room is created will break the signs for all older chests!
+  Sign: |-
+        -=-=-=-=-=-=-
+        &4Confiscate
+        {player}
+        -=-=-=-=-=-=-
+
+# -------------------------------------------------------------------------------------------
+# Verbos utilizados en los mensajes anteriores en el registro de transacciones.
+# -------------------------------------------------------------------------------------------
+Verbs: 
+  Buy: comprado
+  Sell: vendido
+  Gamble: apostado
+  Barter: cambiado
+  
+# -------------------------------------------------------------------------------------------
+# Commands-related messages.
+# -------------------------------------------------------------------------------------------
+Commands: 
+  Invalid_Sub_Argument: "&cParámetro inválido. Ejecute '/{label} {0}' para ayuda."
+  Invalid_Argument_Multiline: "&cParámetro inválido. Forma de uso:"
+  Label_Description: "&cDescripción: {description}"
+  Label_Usage: "&cForma de uso:"
+  Label_Usages: "&cForma de usos:"
+  Error: "&4&lOups! &cEl comando falló :( Revisa la consola y reporta el error."
+  No_Console: "&cSolamente puedes usar este comando siendo un jugador."
+  Invalid_Argument: "&cArgumento inválido. Ejecute &6/{label}&c para ayuda."
+  Invalid_Param: "Parámetro inválido /{label} {param}"
+  Room:
+    Label: "{prefix} &6Comandos para gestionar la sala de cofres. Consejo: haga clic en los letreros de la sala para ver el registro del jugador."
+    Label_Tool: "Reciba la herramienta para establecer la sala de cofres."
+    Label_Tp: "Ser teletransportado a la sala."
+    Cornerstone_Tool_Get: "&2Herramienta obtenida. Haz clic derecho para establecer la esquina de la sala de cofres. La sala se generará automáticamente una vez se detecte algo. &cLa sala se genera desde cero, pero se conservan los registros anteriores de salas y jugadores."
+    Not_Created: "&cLa sala aún no está creada. Usa '/c room tool' para obtener la herramienta de creación."
+    Player_Lacks_Chest: "&cEl jugador '{player}' no tiene un cofre en la sala de cofres."
+    Teleported_Generic: "&2Te teletransportaste a la sala de cofres."
+    Teleported_Player: "&2Te teletransportaste a la sala del cofre de {player}."
+  Inv:
+    Label: "{prefix} &6Comandos para gestionar los inventarios de los jugadores."
+    Label_View: "Examinar el inventario de los jugadores."
+    Label_Enderview: "Examinar el inventario del cofre de ender de los jugadores."
+    Label_Armor: "Examinar el inventario de armadura de los jugadores."
+    
+    Cannot_Browse_Own: "&c¡Ya estás examinando tu inventario!"
+    
+    Write_Online: "&2Se otorgó acceso en vivo al inventario de {player} de tipo {type}."
+    Read_Online: "&2Se otorgó acceso de lectura al inventario de {player} de tipo {type}."
+    Read_Offline: "&2Se otorgó acceso de lectura al inventario de {player} de tipo {type}."
+    Read_Offline_Fail: "&cNo se pudo leer el inventario del jugador desconectado {player} de tipo {type}."
+    
+    Unsupported_Too_New: "&cEl jugador '{player}' está desconectado. La visualización de inventarios de los jugadores desconectados no es compatible en {versión} por ahora."
+    Unsupported_Too_Old: "&cEl jugador '{player}' está desconectado. Ver los inventarios de los jugadores desconectados requiere Minecraft {versión} o más reciente."
+    Unsupported_Library_Missing: "&cEl jugador '{player}' está desconectado. Instale PowerNBT para revisar inventarios de jugadores desconectados."
+    
+    Menu_Armor_View: "&0Mirando la armadura de {player}"
+    Menu_Read: "&0Leyendo {player} {type}."
+    
+    Armor_Write: "&2Se le otorgó acceso en vivo a la armadura de {player}."
+    Armor_Offline_Read: "&2Se le otorgó acceso de lectura a la armadura de {player}."
+    Armor_Offline_Read_Fail: "&cNo se pudo leer el inventario de armadura del jugador desconectado {player}."
+    
+  Log:
+    Label: "{prefix} &6Comandos para administrar el archivo de registro del jugador donde se almacenan los mensajes sobre sus objetos confiscados."
+    Label_View: "Ver los registros del jugador."
+    Label_Stats: "Ver estadísticas de registros."
+    Label_View_Command: "Confiscar vista exenta para {player}"
+    No_Logs: "&cAún no se han creado registros."
+    No_Logs_Player: "&cEl jugador '{player}' no tiene registros."
+    Finished: "&7Registro terminado. Ejecute &6/c room tp {player} &7para revisar sus objetos."
+    Logs_Header: "&fConfiscar estadísticas exentas "
+    Logs_Line_Type: "&7Hay {size} archivos de jugadores que coinciden con {type}."
+    Logs_Line_Generic: "&7Hay {size} archivos de jugadores. Escribe &6/c stats [type] &7para especificar un tipo."
+    Unknown_Type: "&cTipo de registro inválido '{type}'. Valores válidos: {available}"
+    
+  Reload:
+    Success: "&4La configuración fue recargada."
+    Fail: "&4Oups, &c¡no se pudo recargar! Revisa la consola para más información. Error: {error}"
+  
+  List:
+    Label_Optional: "&2  [] &f= argumentos opcionales (use solo 1 a la vez)"
+    Label_Required: "&6  <> &f= argumentos requeridos"
+    Label_Room: "Gestión de la sala de cofres."
+    Label_Inv: "Administra el contenido del inventario del jugador."
+    Label_Log: "Administra los archivos de registro del jugador."
+    Label_Reload: "Recargar la configuración."
+
+# -------------------------------------------------------------------------------------------
+# Mensajes relacionados al jugador
+# -------------------------------------------------------------------------------------------
+Player: 
+  Never_Played: "&cEl jugador '{player}' nunca jugó en el servidor."
+  Not_Online: "&cEl jugador {player} &cno está conectado a este servidor."  
+# -------------------------------------------------------------------------------------------
+# Varias partes utilizadas en los mensajes.
+# -------------------------------------------------------------------------------------------
+Parts: 
+  Unknown: desconocido
+  Confiscated: "&7Confiscado: &f"
+  Deny: "&4denegar"
+  Spy: "&5espiar"
+  Usage: "Uso"
+  Type_Lowercase: "tipo"
+  Player_Lowercase: "jugador"
+  
+# -------------------------------------------------------------------------------------------
+# Mensajes en el limitador del WorldEdit.
+# -------------------------------------------------------------------------------------------
+WorldEdit:
+  Block: "&8C // &cRecientemente cruzó un límite máximo de bloques, espere {time} antes de volver a usar WorldEdit."
+  Cut: "&8C // &c{amount}x de &7{material} &cse cortaron de la operación."
+  Limit: "&8C // &7La operación se ha limitado a &c{limit} &7bloques. {cut} bloques han sido cortado/s."
+
+# -------------------------------------------------------------------------------------------
+# Mensajes en dos o tres casos (generalmente en forma singular y en una o dos formas en plural).
+# Inglés: 1 second, 2+ seconds
+# Eslovaca: 1 sekunda, 2-4 sekundy, 5+ sekund
+# -------------------------------------------------------------------------------------------
+Cases: 
+  Second: segundo, segundos
+
+# -------------------------------------------------------------------------------------------
+# El mensaje se muestra cuando el jugador no tiene permiso para algo.
+# -------------------------------------------------------------------------------------------
+No_Permission: "&cPermiso insuficiente ({permission})."
+
+# -------------------------------------------------------------------------------------------
+# El mensaje que se muestra a las personas (con permiso) cuando hay nuevas versiones disponibles.
+# -------------------------------------------------------------------------------------------
+Update:
+  Available: |- 
+    &2Una nueva versión de &3Confiscate&2 está disponible.
+    &2Versión actual: &f{current}&2; Nueva versión: &f{new}
+    &2URL: &7https://www.spigotmc.org/resources/{resource_id}/.
+
+# Número de versión interna. ¡NO TOQUES ESTO!
+Version: 1

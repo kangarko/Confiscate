@@ -1,0 +1,183 @@
+# !-----------------------------------------------------------------------------------------!
+#
+#                              Welcome to the localization file
+#
+# -------------------------------------------------------------------------------------------
+#
+#  This file contains most of the visual messages and notification player receives
+#  while interacting with this plugin. Simply edit them as you like and apply changes
+#  by restarting the server or reloading the plugin.
+#
+#  To not display a message, set it to 'none'
+#
+#  Messages supports variables in brackets {} and color codes with & character
+# !-----------------------------------------------------------------------------------------!
+
+Log: 
+  Ignore_In_Room:
+    Type: IGNORED OPENING OF CHESTS IN CHEST ROOM
+    Console_Msg: '&eHráč {0} otevřel truhlu {1} v místnosti s truhlami, ignorování..'
+    Log_Msg: '&eV místnosti s truhlami byla otevřena truhla {1}, ignorování..'
+  Ignore_Metadata:
+    Type: IGNORED ITEMS DUE TO METADATA
+    Console_Msg: '&eIgnorování {1} hráče {0} s {2} metadaty'
+    Log_Msg: '&eIgnorování {1} s {2} metadaty'
+  Crashable:
+    Type: CRASHABLE ITEMS
+    Console_Msg: '&c[VÁŽNÉ] Hráč {0} měl předmět {1} (ID {2}), který mohl způsobit pád, odebírání..'
+    Log_Msg: '&c[VÁŽNÉ] Předmět {1}, ID {2}, může způsobit pád'
+  Illegal:
+    Type: BANNED ITEMS
+    Console_Msg: '&cOdebírání zakázaného předmětu {1} hráče {0}'
+    Log_Msg: '&cOdebírání zakázaného předmětu {1}'
+  Stack_Illegal:
+    Type: OVERSTACKED ITEMS
+    Console_Msg: '&cOdebírání neobvykle {2}x shromážděného předmětu {1} hráče {0}'
+    Log_Msg: '&cNeobvykle {2}x shromážděný předmět {1}'
+  Hacked_Potion:
+    Type: HACKED POTIONS
+    Console_Msg: '&cOdebírání nelegálně získaného lektvaru {1} hráče {0}'
+    Log_Msg: '&cNelegálně získaný lektvar {1}'
+  Infinite_Potion:
+    Type: INFINITE POTIONS
+    Console_Msg: '&cOdebírání nekonečného lektvaru {1} hráče {0}'
+    Log_Msg: '&cNekonečný lektvar {1}'
+  Enchant_Unnatural:
+    Type: UNAPPLICABLE ENCHANTS
+    Console_Msg: '&cOdebírání nepřirozeného očarování {1} na předmětu {2} hráče {0}'
+    Log_Msg: '&cNepřirozené očarování {1} na {2}'
+  Enchant_Too_High:
+    Type: TOO HIGH ENCHANTS
+    Console_Msg: '&cOdebírání moc vysoké úrovně ({2}) očarování {1} na předmětu {3} hráče {0}'
+    Log_Msg: '&cMoc vysoká úroveň ({2}) očarování {1} na předmětu {3}'
+  Worldedit:
+    Type: WORLDEDIT
+    Console_Msg: '&cOmezování WorldEditu hráči {0}, přeskočeno {1}x {2} nad limitem
+      {3}x blízko {4}'
+    Log_Msg: '&cPřeskakování {1}x {2} nad limitem {3}x blízko {4}'
+  Above_Limit:
+    Type: ITEMS ABOVE LIMIT
+    Console_Msg: '&cSledování {0}x {2} hráče {1} nad limitem {3}x'
+    Log_Msg: '&c{0}x {2} nad limitem {3}x'
+  Transaction:
+    Type: SHOP TRANSACTIONS
+    Console_Msg: '&7[{0}] {2} {1} {5} za {4}$ od hráče {3}'
+    Log_Msg: '&7[{0}] {1} {5} za {4}$ od hráče {3}'
+Room:
+  No_Permission:
+    Chest: '&cNemáš dostatečná oprávnění pro zobrazení obsahu truhel.'
+    Logs: '&cNemáš dostatečná oprávnění pro zobrazení hráčských záznamů.'
+    Cornerstone: '&cNemáš dostatečná oprávnění pro nastavení základů místnosti s truhlami.'
+    Destroy: '&cOblast s truhlami je chráněná.'
+  Chest_Menu_Title: '&eTruhla se zabavenými věcmi'
+  Browsing: '&2Prohlížení obsahu truhly. Můžeš si zkopírovat její obsah do svého inventáře, ale
+    všechny změny budou po jejím uzavření ztraceny.'
+  Cornerstone_Set: '&7Nyní jsi nastavil základy &2místnosti s truhlami&7.'
+  Sign: |-
+    -=-=-=-=-=-=-
+    &4Zabaveno
+    {player}
+    -=-=-=-=-=-=-
+Verbs:
+  Buy: zakoupit
+  Sell: prodáno
+  Gamble: vsazeno
+  Barter: vyměněno
+Commands:
+  Invalid_Sub_Argument: '&cNeplatné parametry. Zadej ''/{label} {0}'' pro nápovědu.'
+  Invalid_Argument_Multiline: '&cNeplatný parametr. Použití:'
+  Label_Description: '&cPopis: {description}'
+  Label_Usage: '&cPoužití:'
+  Label_Usages: '&cPoužití:'
+  Error: '&4&lJejda! &cPříkaz se nepovedl :( Podívej se do konzole a nahlaš chybu.'
+  No_Console: '&cTento příkaz můžeš použít pouze jako hráč'
+  Reload_Success: '{plugin_name} {plugin_version} byl znovu načten.'
+  Reload_Fail: '&4Jejda, &cznovunačtení se nepovedlo! Podívej se do konzole pro více informací.
+    Chyba: {error}'
+  Invalid_Argument: '&cNeplatný argument. Zadej &6/{label}&c pro nápovědu.'
+  Invalid_Param: Neplatný parametr /{label} {param}
+  Room:
+    Label: '{prefix} &6Příkazy ke správě místnosti s truhlami. Tip: Klikni na cedulky v
+      místnosti s truhlami pro zobrazení záznamu hráče.'
+    Label_Tool: Získat nástroj na nastavení základů místnosti.
+    Label_Tp: Teleportovat se do místnosti.
+    Cornerstone_Tool_Get: '&2Základový nástroj obdržen. Klikni pravým pro nastavení rohu
+      místnosti s truhlami. Místnost se postaví sama po chycení nějakého hráče.
+      &cMístnost se postaví od nuly, ale předchozí místnost a záznamy hráčů zůstanou zachovány.'
+    Not_Created: '&cMístnost ještě není vytvořena. Použij ''/c room tool'' pro získání
+      nástroje k tvorbě.'
+    Player_Lacks_Chest: '&cHráč ''{player}'' nemá v místnosti s truhlami žádné truhly.'
+    Teleported_Generic: '&2Byl jsi teleportován do místnosti s truhlami.'
+    Teleported_Player: '&2Byl jsi teleportován do místnosti s truhlami hráče {player}.'
+  Inv:
+    Label: '{prefix} &6Příkazy ke správě hráčských inventářů.'
+    Label_View: Prohlížení obsahu hráčova inventáře.
+    Label_Enderview: Prohlížení obsahu hráčovy enderitové truhly.
+    Label_Armor: Prohlížení hráčova brnění.
+    Cannot_Browse_Own: '&cJiž prohlížíš svůj inventář!'
+    Write_Online: '&2Udělen přístup k inventáři typu {type} hráče {player}.'
+    Read_Online: '&2Udělen přístup k prohlížení inventáře typu {type} hráče {player}.'
+    Read_Offline: '&2Udělen přístup k prohlížení inventáře typu {type} hráče {player}.'
+    Read_Offline_Fail: '&cNelze prohlížet offline inventář typu {type} hráče {player}.'
+    Unsupported_Too_New: '&cHráč ''{player}'' je offline. Prohlížení inventářů offline''
+      hráčů není ve verzi {version} podporováno.'
+    Unsupported_Too_Old: '&cHráč ''{player}'' je offline. Prohlížení inventářů offline''
+      hráčů vyžaduje Minecraft {version} nebo novější.'
+    Unsupported_Library_Missing: '&cHráč ''{player}'' je offline. Nainstaluj si prosím
+      PowerNBT pro prohlížení inventářů offline hráčů.'
+    Menu_Armor_View: '&0Prohlížení brnění hráče {player}'
+    Menu_Read: '&0Prohlížení {type} hráče {player}.'
+    Armor_Write: '&2Udělen živý přístup k brnění hráče {player}.'
+    Armor_Offline_Read: '&2Udělen přístup k prohlížení brnění hráče {player}.'
+    Armor_Offline_Read_Fail: '&cNelze prohlížet offline obsah brnění hráče {player}.'
+  Log:
+    Label: '{prefix} &6Příkazy pro správu hráčských záznamů, kde jsou uloženy informace
+      o jejich zabavených předmětech.'
+    Label_View: Zobrazení hráčských záznamů.
+    Label_Stats: Zobrazení statistik záznamů.
+    Label_View_Command: Pohled osvobození od zabavení hráče {player}
+    No_Logs: '&cZatím nebyly vytvořeny žádné záznamy.'
+    No_Logs_Player: '&cHráč ''{player}'' nemá žádné uchované záznamy.'
+    Finished: '&7Záznam dokončen. Zadej &6/c room tp {player} &7pro zobrazení předmětů daného hráče.'
+    Logs_Header: '&fStatistiky osvobození od zabavení '
+    Logs_Line_Type: '&7Je zde {size} hráčských souborů shodujících se s {type}.'
+    Logs_Line_Generic: '&7Je zde {size} hráčských souborů. Zadej &6/c stats [typ] &7pro
+      upřesnění typu.'
+    Unknown_Type: '&cNeznámý typ záznamu ''{type}''. Platné hodnoty: {available}'
+  Reload:
+    Success: '&4Konfigurace byla znovu načtena.'
+    Fail: '&4Jejda, &cznovu načtení se nepovedlo! Podívej se do konzole pro více informací. Chyba:
+      {error}'
+  List:
+    Label_Optional: '&2  [] &f= volitelné argumenty (použij vždy pouze 1)'
+    Label_Required: '&6  <> &f= vyžadované argumenty'
+    Label_Room: Správa místnosti s truhlami.
+    Label_Inv: Správa obsahu hráčova inventáře.
+    Label_Log: Správa hráčových záznamů.
+    Label_Reload: Znovu načíst konfiguraci.
+Player:
+  Never_Played: '&cHráč ''{player}'' nikdy nehrál na tomto serveru.'
+  Not_Online: '&cHráč {player} &cnení na tomto serveru online.'
+Parts:
+  Unknown: neznámé
+  Confiscated: '&7Zabavené: &f'
+  Deny: '&4odmítnout'
+  Spy: '&5pozorovat'
+  Usage: Použití
+  Type_Lowercase: typ
+  Player_Lowercase: hráč
+WorldEdit:
+  Block: '&cNedávno jsi překročil maximální limit bloků, vyčkej prosím {time} před tím, než
+    znovu použiješ WorldEdit.'
+  Cut: '&c{amount} kusů &7{material} &cbylo vyjmuto z operace.'
+  Limit: '&7Operace byla omezena na &c{limit} &7bloků. {cut} bloků
+    bylo vyjmuto.'
+Cases:
+  Second: sekunda, sekundy
+No_Permission: '&cNedostatečná oprávnění ({permission}).'
+Version: 1
+Update:
+  Available: |-
+    &2Je dostupná nová verze pluginu &3Confiscate&2.
+    &2Současná verze: &f{current}&2; Nová verze: &f{new}
+    &2URL: &7https://www.spigotmc.org/resources/{resourceId}/.

@@ -1,0 +1,438 @@
+# !-----------------------------------------------------------------------------------------!
+#                      Welcome to the main configuration of ${project.name}
+# !-----------------------------------------------------------------------------------------!
+#
+# For support and documentation, please see:
+# > https://github.com/kangarko/Confiscate/wiki
+# !-----------------------------------------------------------------------------------------!
+#
+# For material names (Bukkit names), visit:
+# > https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+#
+# !-----------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------
+# Chest room is where the confiscated items are stored. To create it, please use
+# '/c room tool' and specify where the room should be. The room is built automatically.
+# -------------------------------------------------------------------------------------------
+Chest_Room:
+  #
+  # Enable this feature? If false, items are only removed from players.
+  #
+  Enabled: true
+  #
+  # Wait till the server has started fully to load the room? Enable if you the room is on
+  # another world and it causes problems.
+  #
+  Load_After_Server_Starts: false
+  #
+  # Which material should be used for the walls in the chest room? When changed, the old
+  # walls remain from the previous material.
+  #
+  Material: BEDROCK
+
+# -------------------------------------------------------------------------------------------
+# Configure where we should look up for the banned items.
+# -------------------------------------------------------------------------------------------
+Scan:
+  #
+  # Scan players' inventories when they log in, die or change worlds?
+  # This is compatible with per world inventory plugins.
+  #
+  Inventories: false
+  #
+  # Scan players' inventories when they issue commands below? We wait a bit in case
+  # they change worlds, gamemode or similar.
+  #
+  # NOTICE: Requres 'Inventories' enabled.
+  #
+  On_Command:
+    - /warp
+  #
+  # Scan containers (chests, furnaces, enchant tables, etc.) when players open them?
+  #
+  Containers:
+    #
+    # Do the scan?
+    #
+    Enabled: true
+    #
+    # Which containers to ignore? For names, see:
+    # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/inventory/InventoryType.html
+    #
+    Ignored: [ANVIL]
+
+# -------------------------------------------------------------------------------------------
+# Configure when we should ignore banned items.
+# -------------------------------------------------------------------------------------------
+Ignore:
+  #
+  # Do not scan containers and inventories when the player has creative mode?
+  #
+  Creative_Mode: true
+  #
+  # Do not scan inventories, containers and WorldEdit in the following worlds.
+  #
+  Worlds:
+    - vanilla
+    - vanilla_nether
+
+# -------------------------------------------------------------------------------------------
+# The core of this plugin. Configure the behaviour of confiscating banned items.
+# -------------------------------------------------------------------------------------------
+Confiscate:
+  #
+  # Remove items that might cause the server or the client to crash?
+  # This includes technical blocks like piston head, that cannot be used anyway.
+  #
+  Crashable_Items: false
+  #
+  # If true, the items will only be cloned to the chest room.
+  # By default, they are taken away from players and MOVED to the chest room.
+  #
+  Clone: false
+  #
+  # When putting the confiscated item into the chest, should we change its name
+  # and add lore information about its confiscation reason, location and more?
+  #
+  Label_Item: true
+  #
+  # Take shady potions. Works in creative regardless of 'Ignore_Creative'.
+  #
+  Potions:
+    #
+    # Take hacked potions such as potions capable of killing players in creative.
+    #
+    Hacked: true
+    #
+    # Take potions with infinite duration. Disabled by default because some
+    # plugins may have infinite potions as their feature.
+    #
+    Infinite: false
+    #
+    # Confiscate hacked potions that have the effect over the specified value
+    #
+    Max_Effect: 10
+  #
+  # Take illegal enchants.
+  #
+  Enchants:
+    #
+    # To respect custom items from other plugins, how much paranoid
+    # the plugin should be to detect potentially modified items?
+    #
+    # Level 0: Confiscate everything, nothing is ignored.
+    # Level 1: Ignore if the item has lore or name with color codes.
+    # Level 2: Ignore if the item has any lore, or name.
+    #
+    Allow_Strictness: 1
+    #
+    # Ignore if the item has a lore CONTAINING the strings separated
+    # by | on each line.
+    #
+    Lore_Whitelist:
+      - "A Boss egg|This is a Boss egg" # ignore lore with first line containing "A Boss egg" and the second line containing "This is a Boss egg"
+    #
+    # Only take enchants but preserve the item?
+    #
+    Supply_With_Unenchanted: false
+    #
+    # Take the item if it has enchantment that cannot be given on enchantment table naturally?
+    #
+    Non_Applicable:
+      #
+      # Disabled by default due to the Enchanted Books to avoid false catches.
+      #
+      Enabled: false
+      #
+      # Ignore the following enchants and allow them on all items. For names, please see:
+      # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
+      #
+      Exceptions:
+        - THORNS
+    #
+    # Take items having unnaturaly high enchantment level?
+    #
+    Too_High:
+      #
+      # Confiscate?
+      #
+      Enabled: true
+      #
+      # Allow the following enchants to exceed their natural max level to the specified maximum.
+      # For enchant names, see above.
+      #
+      # Format: <enchant_name>: <limit>
+      #
+      Exceptions:
+        SILK_TOUCH: 2
+  #
+  # Remove the following items completely?
+  # Usually those only obtainable via /give command can reveal abusive staff.
+  # Format: <material_name> OR <material_name>:<data>
+  #
+  Items:
+    - SOIL
+  #
+  # Remove the following items if player is NOT in creative mode, when found?
+  # Format: <material_name> OR <material_name>:<data>
+  #
+  Items_Survival:
+    #- BEDROCK
+    #- MONSTER_EGG
+    - COMMAND
+    - BARRIER
+    - STRUCTURE_BLOCK
+    - COMMAND_MINECART
+    - ENDER_PORTAL
+    - ENDER_PORTAL_FRAME
+    - PORTAL
+  #
+  # Take items stacked unnaturaly (for example 64x of Minecart)
+  #
+  Items_Stacked_Unnaturally:
+    #
+    # Confiscate them?
+    #
+    Enabled: true
+    #
+    # Material names (see the header) of items that can be unnaturaly stacked.
+    # Format: <material_name> OR <material_name>:<data>
+    #
+    Exceptions:
+      - POTION
+  #
+  # Remove the following items if found above the limit?
+  # YOU CAN CREATE NEW KEYS OR REMOVE THE ONES YOU DO NOT NEED.
+  #
+  # Players having extreme high amount of these have usually obtained them
+  # through server exploits or have been given to them by some abusive staff.
+  #
+  # Example: If the limit is 20x and you have 25x in your inventary/container,
+  #          the plugin will confiscate 5 pieces.
+  #
+  # Format: <material_name>: <limit> OR "<material_name>:<data>": <limit> (DO NOT FORGET THE QUOTES " ")
+  #
+  Items_Above:
+    DIAMOND_BLOCK: 64
+    DIAMOND: 256
+    EMERALD_BLOCK: 64
+    EMERALD: 256
+    IRON_BLOCK: 300
+    GOLD_BLOCK: 240
+    REDSTONE_BLOCK: 500
+    LAPIS_BLOCK: 640
+    DRAGON_EGG: 5
+    BEACON: 15
+    "GOLDEN_APPLE:1": 54 # only apply for the Enhanced Golden Apple
+  #
+  # Remove the following items if found above the limit if the player is confisered newcomer?
+  #
+  # New players usually don't dispose of high amount of luxury items,
+  # so this might reveal abusive admins giving them items for free.
+  #
+  # NOTICE: You must have server statistics enabled in spigot.yml!
+  #
+  Items_Newcomers:
+    #
+    # How long is the player counted as newcomer (counted from their playing time)?
+    # Set to 'none' to disable.
+    #
+    # Example: If the threshold is 1 hour, all players that played on the
+    #          server less then 1 hour are scanned.
+    #
+    Threshold: 1 hour
+    #
+    # List of items (YOU CAN MAKE YOUR OWN VALUES AND REMOVE THOSE YOU DON'T NEED)
+    #
+    # Format: <material_name>: <limit> OR "<material_name>:<data>": <limit> (DO NOT FORGET THE QUOTES " ")
+    #
+    List:
+      DIAMOND_BLOCK: 3
+      DIAMOND: 48
+      EMERALD_BLOCK: 3
+      EMERALD: 32
+      IRON_BLOCK: 6
+      GOLD_BLOCK: 6
+      REDSTONE_BLOCK: 5
+      LAPIS_BLOCK: 6
+      DRAGON_EGG: 0
+      BEACON: 0
+  #
+  # Confiscate items with specific lore or name.
+  # When matching, all colors are removed. Searching is NOT case sensitive.
+  #
+  # Usage:
+  # - name: Specify the name of the item.
+  # - lore: Specify the lore of the item (join all lines into one).
+  #
+  # NB: If you want to use regular expressions instead of equality, prepend the name/lore with '* ' and write normally.
+  #     You have to wrap the entire line in brackets (" " or ' ') when using regex!
+  #
+  Custom_Items:
+    - name: Hacked Potion
+      lore: Allows to kill creative players
+    - name: "* (.*)(Hacked Spawn Egg)"
+      lore: Special spawn egg to lag the server!
+
+
+# -------------------------------------------------------------------------------------------
+# What to do after the item is confiscated?
+# -------------------------------------------------------------------------------------------
+After_Confiscating:
+  #
+  # Commands that are launched when an item is confiscated.
+  #
+  # Variables: {date} -> current time and date, {material} -> item type, {log_type} reason for confiscating
+  #            {player} the player, {location} -> world and x-y-z coordinates
+  #
+  # Example usage (sending mail to yourself as an owner, if you have Essentials plugin)
+  #  Trigger_Commands:
+  #   - 'mail send <yourName> &7[{date}] &6Confiscate &7has taken a &6{material} &7(reason {log_type}) from {player} at {location}'
+  #
+  Run_Commands: []
+
+# -------------------------------------------------------------------------------------------
+# Logging makes it possible for you to review what happened on your server when you were gone.
+# Configure which parts of the plugin to log.
+# -------------------------------------------------------------------------------------------
+Log:
+  #
+  # Enable logging ? This will toggle all messages in console, for staff members, and saving logs to files.
+  #
+  Enabled: true
+  #
+  # By default, everything is logged. You can disable logging specific parts here.
+  # To get to know what they are, run "/c log stats blah".
+  #
+  Exceptions: []
+
+# -------------------------------------------------------------------------------------------
+# Get notified when your players (or staff) run specified commands.
+# This can work as a highly effective alternative to social spy features from other plugins.
+# -------------------------------------------------------------------------------------------
+Spy:
+  #
+  # Enable monitoring commands in-game to potentially discover abuse?
+  #
+  Enabled: true
+  #
+  # Save to command-spy.log ?
+  #
+  Write_To_File: true
+  #
+  # Set to true if you want to prevent the commands below from being executed at all.
+  #
+  Block: false
+  #
+  # List of all the commands that are monitored.
+  # People with 'confiscate.notify.commandspy' will be notified when somebody executes them.
+  #
+  # TIP: You can use regular expressions to find commands. Those are case insensitive. Example:
+  #      - /give (.*) diamond
+  #
+  Command_List:
+    - /give
+    - /i
+    - /ban
+    - /tempban
+    - /gm
+    - /gamemode
+    - /op
+
+# -------------------------------------------------------------------------------------------
+# Integration with the WorldEdit plugin. You can prevent stuff from abusing WorldEdit
+# and control which materials they are allowed to use.
+# -------------------------------------------------------------------------------------------
+WorldEdit:
+  #
+  # Enable the entire section? This does not support reload if changed!
+  #
+  Enabled: true
+  #
+  # Limit WorldEdit operations like //set, //sphere to a maximum amount of changed items to prevent lag.
+  #
+  Total_Blocks_Limit:
+    #
+    # You can specify different limits for people with different permissions.
+    # Here for example, players having "confiscate.group.vip" permission are able to set max 1000 blocks in a operation.
+    #
+    vip: 1_000
+    moderators: 20_000
+  #
+  # You can specify the max amount of allowed item per operation by prepending the material with '-<amount>'
+  # Example: BEDROCK-128 (That means a player is allowed to set maximum 128x of bedrocks per one operation.)
+  # Not setting max amount means the item will be completely banned.
+  #
+  # If you have Prevent_Crashable_Items enabled, some unsafe technical blocks are included as well.
+  #
+  Blocks_Limits: [
+    # Block containers that may cause visual glitches and invisible inventories.
+    CHEST, TRAPPED_CHEST, ENDER_CHEST, FURNACE, BURNING_FURNACE, DISPENSER, DROPPER,
+    HOPPER, COMMAND, BEACON, ANVIL, ENCHANTMENT_TABLE, JUKEBOX, STRUCTURE_BLOCK, BREWING_STAND, CAULDRON,
+
+    # Limit unobtainable, creative-only and special items.
+    BEDROCK-512, BARRIER-512, SPONGE, MOB_SPAWNER-8, DAYLIGHT_DETECTOR, ENDER_PORTAL_FRAME, DRAGON_EGG-4, NOTE_BLOCK,
+
+    # Limit most misused luxury items.
+    IRON_BLOCK-128, GOLD_BLOCK-128, REDSTONE_BLOCK-128, LAPIS_BLOCK-128, DIAMOND_BLOCK-64, EMERALD_BLOCK-64, TNT-24,
+    WATER-12, STATIONARY_WATER-12, STATIONARY_LAVA-8, LAVA-8, FIRE-12,
+
+    # Block items that drop when placed in air, and that may freeze the server if set too many.
+    RAILS, POWERED_RAIL, DETECTOR_RAIL, ACTIVATOR_RAIL, LEVER, STONE_BUTTON, WOOD_BUTTON, REDSTONE_TORCH_ON,
+    WOOD_PLATE, IRON_PLATE, STONE_PLATE, GOLD_PLATE, SAPLING, YELLOW_FLOWER, RED_ROSE, WATER_LILY, DOUBLE_PLANT,
+    BROWN_MUSHROOM, RED_MUSHROOM, CARPET, TORCH, VINE, SNOW, TRIPWIRE_HOOK, TRAP_DOOR, IRON_TRAPDOOR, REDSTONE_WIRE,
+    CROPS, CARROT, POTATO
+  ]
+  #
+  # If player exceeds any of the limit above, how much must they wait before they try to
+  # use any of the materials above again? Slows down bypassing with //replace and others.
+  #
+  Wait_Threshold: 30 seconds
+
+# -------------------------------------------------------------------------------------------
+# Aliases are alternative command names which trigger the same command as the main command.
+# Separate them with a comma, e.g: aliases: [confiscate, c]
+# * THE FIRST ALIAS IS THE MAIN LABEL, THAT MEANS AT LEAST ONE ALIAS MUST BE SPECIFIED. *
+# -------------------------------------------------------------------------------------------
+Command_Aliases: [confiscate, c]
+
+# -------------------------------------------------------------------------------------------
+# You can change the prefix in front of chat or console messages here:
+# -------------------------------------------------------------------------------------------
+Prefix: "&7C &8//&7"
+
+# -------------------------------------------------------------------------------------------
+# Change the language of the messages in this plugin, or completelly customize them.
+# To customize, create localization/ folder and restart. A new file will appear there.
+#
+# Currently: en (English), cn (Chinese) and es (Spanish)
+# -------------------------------------------------------------------------------------------
+Locale: en
+
+# -------------------------------------------------------------------------------------------
+# Check and notify for newer versions?
+# -------------------------------------------------------------------------------------------
+Notify_Updates: true
+
+# -------------------------------------------------------------------------------------------
+# Support the developer of this plugin to allow occasional promotional messages ?
+# I promise to keep it low key and only display it once a day at maximum.
+# -------------------------------------------------------------------------------------------
+Notify_Promotions: true
+
+# -------------------------------------------------------------------------------------------
+# Time of some plugin's operations is measured. Print a message to the console if they take
+# over the specified amount of time in milliseconds. Set to -1 to disable.
+# -------------------------------------------------------------------------------------------
+Log_Lag_Over_Milis: 100
+
+# -------------------------------------------------------------------------------------------
+# Allow to debug individual sections of this plugin. Currently: [worldedit]
+# -------------------------------------------------------------------------------------------
+Debug: []
+
+# -------------------------------------------------------------------------------------------
+# Configuration version. It is used to update your settings. Do not touch.
+# -------------------------------------------------------------------------------------------
+Version: 5

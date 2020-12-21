@@ -1,0 +1,224 @@
+# !-----------------------------------------------------------------------------------------!
+#
+#                              Welcome to the localization file
+#
+# -------------------------------------------------------------------------------------------
+#
+#  This file contains most of the visual messages and notification player receives
+#  while interacting with this plugin. Simply edit them as you like and apply changes
+#  by restarting the server or reloading the plugin.
+#
+#  To not display a message, set it to 'none'
+#
+#  Messages supports variables in brackets {} and color codes with & character
+# !-----------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------
+# Log-related messages.
+# -------------------------------------------------------------------------------------------
+Log:
+  Ignore_In_Room:
+    Type: IGNORED OPENING OF CHESTS IN CHEST ROOM
+    Console_Msg: '&e{0} opened {1} in chest room, ignoring..'
+    Log_Msg: '&eOpened {1} in chest room, ignoring..'
+  Ignore_Metadata:
+    Type: IGNORED ITEMS DUE TO METADATA
+    Console_Msg: '&eIgnoring {0}''s {1} with {2} metadata'
+    Log_Msg: '&eIgnore {1} with {2} metadata'
+  Crashable:
+    Type: CRASHABLE ITEMS
+    Console_Msg: '&c[SEVERE] {0} had crashable item {1} (id {2}), removing..'
+    Log_Msg: '&c[SEVERE] Crashable item {1} id {2}'
+  Illegal:
+    Type: BANNED ITEMS
+    Console_Msg: '&cTaking {0}''s banned item {1}'
+    Log_Msg: '&cTaking banned item {1}'
+  Stack_Illegal:
+    Type: OVERSTACKED ITEMS
+    Console_Msg: '&cTaking {0}''s abnormally stacked item {1} {2}x'
+    Log_Msg: '&cAbnormally {2}x stacked {1}'
+  Hacked_Potion:
+    Type: HACKED POTIONS
+    Console_Msg: '&cTaking {0}''s hacked {1} potion'
+    Log_Msg: '&cHacked {1} potion'
+  Infinite_Potion:
+    Type: INFINITE POTIONS
+    Console_Msg: '&cTaking {0}''s infinite {1} potion'
+    Log_Msg: '&cInfinite {1} potion'
+  Enchant_Unnatural:
+    Type: UNAPPLICABLE ENCHANTS
+    Console_Msg: '&cTaking {0}''s unnatural {1} enchant on {2}'
+    Log_Msg: '&cUnnatural {1} enchant on {2}'
+  Enchant_Too_High:
+    Type: TOO HIGH ENCHANTS
+    Console_Msg: '&cTaking {0}''s too high enchant {1} {2} on {3}'
+    Log_Msg: '&cToo high {1} enchant lvl {2} on {3}'
+  Worldedit:
+    Type: WORLDEDIT
+    Console_Msg: '&cLimiting WorldEdit for {0}, skipped {1}x of {2}s above max limit
+      {3}x near {4}'
+    Log_Msg: '&cSkipping {1}x of {2}s above max limit {3}x near {4}'
+  Above_Limit:
+    Type: ITEMS ABOVE LIMIT
+    Console_Msg: '&cTaking {0}x of {1}''s {2} above limit {3}x'
+    Log_Msg: '&c{0}x {2} above limit {3}x'
+  Transaction:
+    Type: SHOP TRANSACTIONS
+    # The {1} is usually replaced by verbs from below
+    Console_Msg: '&7[{0}] {2} {1} {5} for {4}$ from {3}'
+    Log_Msg: '&7[{0}] {1} {5} for {4}$ from {3}'
+
+# -------------------------------------------------------------------------------------------
+# Messages relating to the chest room
+# -------------------------------------------------------------------------------------------
+Room:
+  No_Permission:
+    Chest: "&cDir fehlt die Berechtigung den Inhalt des Chest-Rooms zu sehen."
+    Logs: "&cDir fehlt die Berechtigung, den PlayerLog zu sehen."
+    Cornerstone: "&cDir fehlt die Berechtigung, einen neuen ChestRoom zu erstellen."
+    Destroy: "&cDie Region des ChestRooms ist geschützt."
+
+  Chest_Menu_Title: "&0Confiscated Chest VIew"
+  Browsing: "&2Browsing chest content. You may copy content to your inventory, but all changes are lost upon closing."
+  Cornerstone_Set: "&7You have now set the &2chest room &7foundation."
+
+  # WARNING: Changing this AFTER your room is created will break the signs for all older chests!
+  Sign: |-
+    -=-=-=-=-=-=-
+    &4Confiscate
+    {player}
+    -=-=-=-=-=-=-
+
+# -------------------------------------------------------------------------------------------
+# Verbs used in the above messages in the transaction log.
+# -------------------------------------------------------------------------------------------
+Verbs:
+  Buy: gekauft
+  Sell: verkauft
+  Gamble: verspielt
+  Barter: tauschen
+
+# -------------------------------------------------------------------------------------------
+# Commands-related messages.
+# -------------------------------------------------------------------------------------------
+Commands:
+  Invalid_Param: "&cUnbekannter Parameter: /{label} {param}"
+  No_Console: "&cDu kannst diesen Befehl nur als Spieler verwenden"
+  Reload_Success: "{plugin_name} {plugin_version} wurde reloaded."
+  Reload_Fail: "&4Oups, &creloading fehlgeschlagen! Schau dir die Konsole für mehr Informationen an. Error: {error}"
+  Invalid_Argument: "&cUngültiger Parameter. Führe &6/{label} ? &cfür Hilfe aus."
+  Invalid_Sub_Argument: "&cUngültiger Parameter. Führe '/{label} {0}' für Hilfe aus."
+  Invalid_Argument_Multiline: "&cUngültiger Parameter. Nutzung:"
+  Label_Description: "&cBeschreibung: {description}"
+  Label_Usage: "&cNutzung:"
+  Label_Usages: "&cNutzung:"
+  Error: "&4&lOups! &cDer Command warf eine Ausnahme :( Check the console and report the error."
+
+  Room:
+    Label: "{prefix} &6Commands um den ChestRoom zu managen Tipp: Click signs in the chest room to view player's log."
+    Label_Tool: "Receive room foundation tool."
+    Label_Tp: "Be teleported to the room."
+    Cornerstone_Tool_Get: "&2Foundation tool obtained. Right click to setup the cornerstone for the chest room. The room builds itself further once something is caught. &cThe room builds from scratch, but previous room and player logs are preserved."
+    Not_Created: "&cThe room is not yet created. Use '/c room tool' to obtain the creation tool."
+    Player_Lacks_Chest: "&cPlayer '{player}' hasn't any chest in the chest room."
+    Teleported_Generic: "&2You have been teleported to chest room."
+    Teleported_Player: "&2You have been teleported to {player}'s chest room."
+  Inv:
+    Label: "{prefix} &6Commands to manage players' inventories."
+    Label_View: "Browse player's inventory content."
+    Label_Enderview: "Browse player's ender chest content."
+    Label_Armor: "Browse player's armor content."
+
+    Cannot_Browse_Own: "&cYou are already browsing your inventory!"
+
+    Write_Online: "&2Granted live access to {player}'s {type} inventory."
+    Read_Online: "&2Granted read access to {player}'s {type} inventory."
+    Read_Offline: "&2Granted read access to {player}'s {type} inventory."
+    Read_Offline_Fail: "&cCould not read offline {type} inventory of {player}."
+
+    Unsupported_Too_New: "&cPlayer '{player}' is offline. Viewing offline players' inventories is not supported on {version} for now."
+    Unsupported_Too_Old: "&cPlayer '{player}' is offline. Viewing offline players' inventories requires Minecraft {version} or newer."
+    Unsupported_Library_Missing: "&cPlayer '{player}' is offline. Please install PowerNBT to browse inventories of offline players."
+
+    Menu_Armor_View: "&0Viewing {player}'s armor"
+    Menu_Read: "&0Reading {player}'s {type}."
+
+    Armor_Write: "&2Granted live access to {player}'s armor."
+    Armor_Offline_Read: "&2Granted read access to {player}'s armor."
+    Armor_Offline_Read_Fail: "&cCould not read offline armor content of {player}."
+
+  Log:
+    Label: "{prefix} &6Commands to manage player's log file where messages about their confiscated items are stored."
+    Label_View: "View player's logs."
+    Label_Stats: "View logs statistics."
+    Label_View_Command: "Confiscate Exempt View for {player}"
+    No_Logs: "&cThere are no logs created yet."
+    No_Logs_Player: "&cPlayer '{player}' has no stored logs."
+    Finished: "&7Log finished. Run &6/c room tp {player} &7to review their items."
+    Logs_Header: "&fConfiscate Exempt Statistics "
+    Logs_Line_Type: "&7There are {size} player files matching {type}."
+    Logs_Line_Generic: "&7There are {size} player files. Type &6/c stats [type] &7to specify type."
+    Unknown_Type: "&cUnknown log type '{type}'. Valid values: {available}"
+
+  Reload:
+    Success: "&4The configuration has been reloaded."
+    Fail: "&4Oups, &creloading failed! See the console for more information. Error: {error}"
+
+  List:
+    Label_Optional: "&2  [] &f= optional arguments (use only 1 at once)"
+    Label_Required: "&6  <> &f= required arguments"
+    Label_Room: "Chest room management."
+    Label_Inv: "Manage player's inventory content."
+    Label_Log: "Manage player's log files."
+    Label_Reload: "Reload the configuration."
+
+# -------------------------------------------------------------------------------------------
+# Player-related messages
+# -------------------------------------------------------------------------------------------
+Player:
+  Never_Played: "&cPlayer '{player}' has never played on the server."
+  Not_Online: "&cPlayer {player} &cis not online on this server."
+# -------------------------------------------------------------------------------------------
+# Various parts used across the messages here.
+# -------------------------------------------------------------------------------------------
+Parts:
+  Unknown: unknown
+  Confiscated: "&7Confiscated: &f"
+  Deny: "&4deny"
+  Spy: "&5spy"
+  Usage: "Usage"
+  Type_Lowercase: "type"
+  Player_Lowercase: "player"
+
+# -------------------------------------------------------------------------------------------
+# Messages in WorldEdit limiter.
+# -------------------------------------------------------------------------------------------
+WorldEdit:
+  Block: "&cYou recently crossed a maximum blocks limit, please wait {time} before using WorldEdit again."
+  Cut: "&c{amount}x of &7{material} &cwere cut from the operation."
+  Limit: "&7The operation has been limited to &c{limit} &7blocks. {cut} blocks has been cut."
+
+# -------------------------------------------------------------------------------------------
+# Messages in two or three cases (usually the singular form and one/two plural forms).
+# English: 1 second, 2+ seconds
+# Slovak: 1 sekunda, 2-4 sekundy, 5+ sekund
+# -------------------------------------------------------------------------------------------
+Cases:
+  Second: Sekunde, Sekunde
+
+# -------------------------------------------------------------------------------------------
+# The message shown when the player did not have a permission for something.
+# -------------------------------------------------------------------------------------------
+No_Permission: "&cUnzureichende Berechtigung ({permission})."
+
+# -------------------------------------------------------------------------------------------
+# The message shown to people (with permission) when a new versions is available.
+# -------------------------------------------------------------------------------------------
+Update:
+  Available: |-
+    &2Eine neue Version von &3${project.artifactId}&2 ist verfügbar.
+    &2Aktuelle Version: &f{current}&2; Neue Version: &f{new}
+    &2URL: &7https://www.spigotmc.org/resources/{resource_id}/.
+
+# Internal version number. Do not change!
+Version: 1
