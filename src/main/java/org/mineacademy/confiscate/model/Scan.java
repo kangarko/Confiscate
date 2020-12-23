@@ -455,7 +455,7 @@ public class Scan {
 
 		if (m.hasLore())
 			for (final String whitelist : Settings.Confiscate.Enchants.LORE_WHITELIST) {
-				final String[] split = whitelist.split("|");
+				final String[] split = whitelist.split("\\|");
 				final List<String> lore = m.getLore();
 
 				for (int i = 0; i < split.length; i++)
