@@ -5,6 +5,8 @@
   </a>
 </p>
 
+## Announcement: This plugin is now free of charge, you can download it in the "Releases" tab. See https://mineacademy.org/plugins for a list of all plugins we've open sourced.
+
 # Confiscate
 Confiscate is a premium grade Bukkit plugin that offers confiscating illegal items away from players. It has been designed as an innovative approach to lower the frustration of server owners from:
 
