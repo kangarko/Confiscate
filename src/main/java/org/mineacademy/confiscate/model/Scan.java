@@ -740,10 +740,11 @@ public class Scan {
 
 	private void runCommands(CompMaterial mat, LogMessage message) {
 		Valid.checkBoolean(!message.toString().contains("IGNORE"), "[REPORT ME] Bacha, aby sa prikazy nespustili ked nieco prehliadneme.");
+
 		for (final String cmd : Settings.AfterConfiscate.RUN_COMMANDS)
 			Common.dispatchCommand(player, cmd
 					.replace("{date}", TimeUtil.getFormattedDate())
-					.replace("{material}", ItemUtil.bountifyCapitalized(mat))
+					.replace("{material}", mat == null ? "" : ItemUtil.bountifyCapitalized(mat))
 					.replace("{location}", Common.shortLocation(player.getLocation()))
 					.replace("{log_type}", ItemUtil.bountifyCapitalized(message).toLowerCase()));
 	}
