@@ -3,7 +3,7 @@ main: ${main.class}
 version: ${project.version}
 api-version: 1.13
 author: kangarko
-softdepend: [AuthMe, BossShop, BlueShop, BungeeChatAPI, DiscordSRV, Factions, Feudal, Essentials, ChestShop, LegacyFactions, LuckPerms, MVdWPlaceholderAPI, Multiverse-Core, Nicky, PlaceholderAPI, PowerNBT, ProtocolLib, Shop, ShopGUIPlus, SignShop, SimpleClans, Towny, TownyChat, Vault, WorldEdit]
+softdepend: [AuthMe, BossShop, BlueShop, BungeeChatAPI, DiscordSRV, Factions, Feudal, Essentials, ChestShop, LegacyFactions, NashornPlus, LuckPerms, MVdWPlaceholderAPI, Multiverse-Core, Nicky, PlaceholderAPI, PowerNBT, ProtocolLib, Shop, ShopGUIPlus, SignShop, SimpleClans, Towny, TownyChat, Vault, WorldEdit]
 #
 # The commands are built at runtime so you can change them easily within the settings.
 # Do not change anything in here, you will break the plugin and get no support.

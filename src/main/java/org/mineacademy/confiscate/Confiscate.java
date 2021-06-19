@@ -26,7 +26,6 @@ import org.mineacademy.fo.MinecraftVersion;
 import org.mineacademy.fo.MinecraftVersion.V;
 import org.mineacademy.fo.collection.StrictMap;
 import org.mineacademy.fo.model.HookManager;
-import org.mineacademy.fo.model.SpigotUpdater;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.remain.Remain;
 import org.mineacademy.fo.settings.YamlStaticConfig;
@@ -169,10 +168,10 @@ public class Confiscate extends SimplePlugin {
 		return Arrays.asList(Settings.class, Localization.class);
 	}
 
-	@Override
+	/*@Override
 	public final SpigotUpdater getUpdateCheck() {
 		return new SpigotUpdater(37893);
-	}
+	}*/
 
 	@Override
 	public final int getFoundedYear() {

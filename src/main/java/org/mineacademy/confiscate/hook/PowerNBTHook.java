@@ -100,7 +100,7 @@ class PowerNBTHook0 {
 	private final ItemStack getItemFromNBT(NBTCompound nbt) {
 		try {
 			final Class<?> cis = ReflectionUtil.getOBCClass("inventory.CraftItemStack");
-			final Class<?> nmsItem = ReflectionUtil.getNMSClass("Item");
+			final Class<?> nmsItem = ReflectionUtil.getNMSClass("Item", "net.minecraft.world.item.Item");
 
 			final Method asItemStack = cis.getDeclaredMethod("asNewCraftStack", nmsItem, Integer.TYPE);
 			final Object nmsItemObj = nmsItem.getDeclaredMethod(getItemMethodName(), String.class).invoke(null, nbt.getString("id"));

@@ -47,6 +47,6 @@ class TagProviderReflection implements ITagProvider {
 		final Object nms = asNMSCopy(is);
 		final Class<?> cl = nms.getClass();
 
-		return (boolean) cl.getMethod("hasTag").invoke(nms) ? cl.getMethod("getTag").invoke(nms) : ReflectionUtil.instantiate(ReflectionUtil.getNMSClass("NBTTagCompound"));
+		return (boolean) cl.getMethod("hasTag").invoke(nms) ? cl.getMethod("getTag").invoke(nms) : ReflectionUtil.instantiate(ReflectionUtil.getNMSClass("NBTTagCompound", "net.minecraft.nbt.NBTTagCompound"));
 	}
 }
