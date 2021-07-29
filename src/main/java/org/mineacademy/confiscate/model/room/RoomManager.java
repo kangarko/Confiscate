@@ -113,7 +113,7 @@ public class RoomManager {
 
 			final Location signLoc = new Location(roomFile.getWorld(), x, y + 1, z);
 
-			setBlock(x, y + 1, z, CompMaterial.WALL_SIGN);
+			setBlock(x, y + 1, z, CompMaterial.OAK_WALL_SIGN);
 			paintSign(signLoc, player);
 
 			roomFile.saveNewChest(player, x, y, z, 1);
