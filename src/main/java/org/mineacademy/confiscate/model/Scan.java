@@ -517,7 +517,7 @@ public class Scan {
 	private void scanAboveLimit(StrictMap<CompMaterial, Integer> itemsWithLimits) {
 		for (final Map.Entry<CompMaterial, Integer> item : itemsWithLimits.entrySet()) {
 			if (item.getKey() == null || item.getValue() == null) {
-				Common.log("Warning: Invalid item with limit. Correct your settings.yml looking for item: " + item.getKey() + " with limit: " + item.getValue() + "");
+				Common.warning("Invalid item with limit. Correct your settings.yml looking for item: " + item.getKey() + " with limit: " + item.getValue() + "");
 
 				continue;
 			}
