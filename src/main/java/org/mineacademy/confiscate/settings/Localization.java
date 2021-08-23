@@ -15,6 +15,14 @@ public class Localization extends SimpleLocalization {
 		return 1;
 	}
 
+	/**
+	 * @see org.mineacademy.fo.settings.YamlConfig#saveComments()
+	 */
+	@Override
+	protected boolean saveComments() {
+		return false;
+	}
+
 	public static class Log {
 
 		private static HashMap<String /*path*/, String /*message*/> lazyMap = new HashMap<>();
