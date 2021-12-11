@@ -1,7 +1,7 @@
 # We have left SpigotMC and [continue Confiscate development here](https://www.mc-market.org/resources/21644/). If you purchased the plugin on SpigotMC you can get a free license upgrade.
 
 <p align="center">
-  Do you want to build your own Confiscate with unique features only for your server?
+  Do you want to learn Java and code highly-customized Minecraft plugins? I've made a training for you!
   <a href="https://mineacademy.org/project-orion">
     <img src="https://i.imgur.com/OJuN0qP.png" />
   </a>
