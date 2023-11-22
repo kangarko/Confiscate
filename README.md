@@ -1,4 +1,4 @@
-# We have left SpigotMC and [continue Confiscate development here](https://www.mc-market.org/resources/21644/). If you purchased the plugin on SpigotMC you can get a free license upgrade.
+# SpigotMC.org banned us and is censoring "MineAcademy" mentions. We're still active. [Read more here](https://mineacademy.org/spigotmc-ban?st=github&sc=spigotban_confiscate).
 
 <p align="center">
   Learn Java and code highly-customized Minecraft plugins in 20 days (without experience):
